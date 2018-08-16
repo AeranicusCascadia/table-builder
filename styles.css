@@ -1,0 +1,86 @@
+body {
+	background-color: cornsilk;
+	}
+	
+table {
+	border: 2px solid black;
+	}
+
+tr:nth-child(n+2):nth-child(odd) {
+	background-color: #87CEFA;
+	color: #000000;
+	}
+	
+#my_table {
+	background: rgba(255,255,255,0.5);
+	border: none;
+	border-collapse: collapse;
+	margin: 25px 0px 50px 0px;
+}
+
+#my_table .first{
+	border-bottom:3px solid black;
+}
+#my_table .first td{
+	border-bottom:3px solid black;
+}
+/*
+#my_table tr:nth-child(1) {
+	border-bottom: 2px solid black;
+}
+
+#my_table tr:nth-child(1) td {
+	height: 2.0em;
+	background: white;
+}
+*/
+#my_table tr {
+	border-bottom: 0px solid black;
+}
+
+#my_table th, td {
+
+	border-left: 1px solid black;	
+}
+
+#my_table th, td:first-child {
+	border-left: none;
+} 
+
+/*
+#my_table input[type=text] {
+	background-color: transparent;
+	border: none; 
+	padding: 5px;
+}
+
+
+#my_table tr:nth-child(n+2) td:nth-child(n+2) input[type=text] {
+	text-align: center;
+}
+
+
+#my_table tr:nth-child(1) input[type=text] {
+	height: 2.0em;
+	font-weight: 600;
+	padding: 5px;
+}
+*/
+
+#my_table textarea {
+	background-color: transparent;
+	border: none; 
+	padding: 5px;
+}
+
+
+#my_table tr:nth-child(n+2) td:nth-child(n+2) textarea {
+	text-align: center;
+}
+
+
+#my_table tr:nth-child(1) textarea {
+	height: 2.0em;
+	font-weight: 600;
+	padding: 5px;
+}

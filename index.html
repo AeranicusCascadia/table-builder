@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Table Builder</title>
+<meta name="generator" content="Geany 1.27" />
+<link rel="stylesheet" href="styles.css">
+<script src="html2canvas.js"></script>
+<script src="main.js"></script>
+<script>
+window.takeScreenShot = function() {
+    html2canvas(document.getElementById("my_table"), { //pass element to target
+        onrendered: function (canvas) {
+            document.body.appendChild(canvas);
+			
+        },
+        width:window.innerWidth,
+        height:window.innerHeight
+    });
+}
+</script>
+</head>
+
+<body onload="hideButton()">
+
+	<h2>Table Builder Alpha</h2><br>
+	
+	<div id="inputs">
+		<p>Please select the size of your new table</p>
+		
+		<form>
+			<p>
+				Columns<br>
+				<input id="choose_cols" type="number" min="1" max="12" required>
+			</p>
+			<p>
+			(Don't include header rows for columns, these will be added automatically)<br>Rows:<br>
+				<input id="choose_rows" type="number" min="1" max="25" required>
+			</p>
+		</form>
+		<p>
+			<button type="button" onclick="addRowsCols()">Build starting empty table</button>
+		</p>
+	</div>
+	
+
+	<div id="test_display_area">
+	</div>
+
+	<table id="my_table">
+	</table>
+	
+	
+	<div id="tableGenerator">
+	<p><button type="button" onclick="generatePNG()">Click to generate table graphic</button></p>
+	</div>
+
+
+</body>
+</html>
