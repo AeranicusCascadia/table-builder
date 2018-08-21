@@ -5,23 +5,9 @@
 <title>Table Builder</title>
 <meta name="generator" content="Geany 1.27" />
 <link rel="stylesheet" href="styles.css">
-<script src="html2canvas.js"></script>
-<script src="main.js"></script>
-<script>
-window.takeScreenShot = function() {
-    html2canvas(document.getElementById("my_table"), { //pass element to target
-        onrendered: function (canvas) {
-            document.body.appendChild(canvas);
-			
-        },
-        width:window.innerWidth,
-        height:window.innerHeight
-    });
-}
-</script>
 </head>
 
-<body onload="hideButton()">
+<body onload="pageLoadFunctions()">
 
 	<h2>Table Builder Alpha</h2><br>
 	
@@ -43,7 +29,6 @@ window.takeScreenShot = function() {
 		</p>
 	</div>
 	
-
 	<div id="test_display_area">
 	</div>
 
@@ -51,10 +36,25 @@ window.takeScreenShot = function() {
 	</table>
 	
 	
-	<div id="tableGenerator">
-	<p><button type="button" onclick="generatePNG()">Click to generate table graphic</button></p>
-	</div>
+	
+	<p><button id ="tableGeneratorButton" type="button" onclick="generatePNG()">Click to generate table graphic</button></p>
+	
 
+<script src="html2canvas.js"></script>
+<script src="main.js"></script>
+
+<script>
+window.takeScreenShot = function() {
+    html2canvas(document.getElementById("my_table"), { //pass element to target
+        onrendered: function (canvas) {
+            document.body.appendChild(canvas);
+			
+        },
+        width:window.innerWidth,
+        height:window.innerHeight
+    });
+}
+</script>
 
 </body>
 </html>
