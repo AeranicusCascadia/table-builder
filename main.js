@@ -1,5 +1,10 @@
 // Main javascript
 
+// Functions for testing, etc
+function resizeAlert() {
+	window.alert("Resized!");
+}
+
 // Disable event: focus on press 'Enter'
 function stopRKey(evt) { 
   var evt = (evt) ? evt : ((event) ? event : null); 
@@ -93,7 +98,7 @@ function buildInitialEmptyTable() {
 			// Inner loop iterates colums (cells per row)
 			for (j = 0; j < myTable.cols; j++) { // Iterate based on myTable.cols
 				cell = row.insertCell(j); // Insert cell into row at 'j' position 
-				cell.innerHTML = '<textarea></textarea>'; // // pass hmtl contents to cell
+				cell.innerHTML = '<textarea></textarea>'; // // pass hmtl contents to cell 
 			}
 		}
 	}
@@ -111,4 +116,9 @@ function addRowsCols() {
 function generatePNG() {
 	takeScreenShot();
 	hideButton();
+}
+
+// Alert for testing resize event
+function testAlert() {
+	window.alert('Resize detected!');
 }
