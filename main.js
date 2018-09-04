@@ -1,9 +1,5 @@
 // Main javascript
 
-// Functions for testing, etc
-function resizeAlert() {
-	window.alert("Resized!");
-}
 
 // Disable event: focus on press 'Enter'
 function stopRKey(evt) { 
@@ -105,7 +101,15 @@ function buildInitialEmptyTable() {
 		
 	hideInputsDiv() // hide 'inputs' div
 	showtableGeneratorButton() // show table generator button
-}
+	
+	// Use mouseup listener instead of resize event
+	$("textarea").mouseup(function(){
+		var elem_width = $(this).width();
+		$("textarea").width(elem_width);
+	});
+	
+	} // close function
+	
 
 function addRowsCols() {
 	validateRowsCols();
