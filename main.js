@@ -110,7 +110,18 @@ function buildInitialEmptyTable() {
 	
 	} // close function
 	
-
+function addOneRow() {
+	
+	var table = document.getElementById("my_table");
+	row = table.insertRow(-1);
+	
+	for (j = 0; j < myTable.cols; j++) {
+		var cell = row.insertCell(j);
+		cell.innerHTML = '<textarea></textarea>'; 
+	}
+	
+}	
+	
 function addRowsCols() {
 	validateRowsCols();
 	setRowsCols();
@@ -122,7 +133,3 @@ function generatePNG() {
 	hideButton();
 }
 
-// Alert for testing resize event
-function testAlert() {
-	window.alert('Resize detected!');
-}
