@@ -24,16 +24,7 @@ tr:nth-child(n+2):nth-child(odd) {
 #my_table .first td{
 	border-bottom:3px solid black;
 }
-/*
-#my_table tr:nth-child(1) {
-	border-bottom: 2px solid black;
-}
 
-#my_table tr:nth-child(1) td {
-	height: 2.0em;
-	background: white;
-}
-*/
 #my_table tr {
 	border-bottom: 0px solid black;
 }
@@ -47,33 +38,18 @@ tr:nth-child(n+2):nth-child(odd) {
 	border-left: none;
 } 
 
-/*
-#my_table input[type=text] {
-	background-color: transparent;
-	border: none; 
-	padding: 5px;
-}
-
-
-#my_table tr:nth-child(n+2) td:nth-child(n+2) input[type=text] {
-	text-align: center;
-}
-
-
-#my_table tr:nth-child(1) input[type=text] {
-	height: 2.0em;
-	font-weight: 600;
-	padding: 5px;
-}
-*/
-
 #my_table textarea {
 	background-color: transparent;
 	border: none; 
 	padding: 5px;
-	
+	font-family: Arial, Helvetica, sans-serif;
 }
 
+#my_table .first textarea {
+	color: black;
+	font-weight: bold;
+	
+}
 
 #my_table tr:nth-child(n+2) td:nth-child(n+2) textarea {
 	text-align: center;

@@ -16,6 +16,11 @@ function hideTableGeneratorButton() {
 	document.getElementById("tableGeneratorButton").hidden = true;
 }
 
+// Hide addRow button
+function hideAddRowButton() {
+	document.getElementById("addRow").hidden = true;
+}
+
 // Hides input forms and button
 function hideInputsDiv() {
 	document.getElementById("inputs").hidden = true;
@@ -28,9 +33,16 @@ function showtableGeneratorButton() {
 document.getElementById("tableGeneratorButton").hidden = false;
 }
 
+// Show addRow button
+function showAddRowButton() {
+document.getElementById("addRow").hidden = false;
+}
+
+
 // Wrapper function to call onload functions
 function pageLoadFunctions() {
 	hideTableGeneratorButton();
+	hideAddRowButton();
 }
 
 // create object: myTable
@@ -64,6 +76,14 @@ function setRowsCols() {
 	// Modifies myTable properties based on validated form input data
 	myTable.rows = parseInt(num_rows)+1; // extra row created for column headers
 	myTable.cols = parseInt(num_cols);
+}
+
+function tableFieldResize() {
+	// Use mouseup listener instead of resize event
+	$("textarea").mouseup(function(){
+		var elem_width = $(this).width();
+		$("textarea").width(elem_width);
+	});
 }
 
 function buildInitialEmptyTable() {
@@ -101,16 +121,24 @@ function buildInitialEmptyTable() {
 		
 	hideInputsDiv() // hide 'inputs' div
 	showtableGeneratorButton() // show table generator button
-	
-	// Use mouseup listener instead of resize event
-	$("textarea").mouseup(function(){
-		var elem_width = $(this).width();
-		$("textarea").width(elem_width);
-	});
+	showAddRowButton() // show addRow button
+	tableFieldResize() // fire onresize event
 	
 	} // close function
 	
-
+function addOneRow() {
+	
+	var table = document.getElementById("my_table");
+	row = table.insertRow(-1);
+	
+	for (j = 0; j < myTable.cols; j++) {
+		var cell = row.insertCell(j);
+		cell.innerHTML = '<textarea></textarea>'; 
+	}
+	
+	tableFieldResize();
+}	
+	
 function addRowsCols() {
 	validateRowsCols();
 	setRowsCols();
@@ -122,7 +150,3 @@ function generatePNG() {
 	hideButton();
 }
 
-// Alert for testing resize event
-function testAlert() {
-	window.alert('Resize detected!');
-}
