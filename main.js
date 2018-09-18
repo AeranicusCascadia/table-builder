@@ -86,6 +86,21 @@ function tableFieldResize() {
 	});
 }
 
+/*
+// In Progress: target current column only to resize
+function columnFieldResize() {
+	// Use mouseup listener instead of resize event
+	$("td").mouseup(function(){
+		var elem_width = $(this).width();
+		// $("textarea").width(elem_width);
+		var x = 4;
+		window.alert(elem_width);
+		// selector is string so quoting and concat is required in arg
+		// $("td:nth-child("+ x +")").css("background-color", "red");
+	});
+}
+*/
+
 function buildInitialEmptyTable() {
 	
 	// create local var 'table' and assign div element 'my_table' to it
@@ -119,10 +134,10 @@ function buildInitialEmptyTable() {
 		}
 	}
 		
-	hideInputsDiv() // hide 'inputs' div
-	showtableGeneratorButton() // show table generator button
-	showAddRowButton() // show addRow button
-	tableFieldResize() // fire onresize event
+	hideInputsDiv(); // hide 'inputs' div
+	showtableGeneratorButton(); // show table generator button
+	showAddRowButton(); // show addRow button
+	tableFieldResize(); // fire column onresize event
 	
 	} // close function
 	
@@ -138,7 +153,7 @@ function addOneRow() {
 	
 	tableFieldResize();
 }	
-	
+
 function addRowsCols() {
 	validateRowsCols();
 	setRowsCols();
@@ -147,6 +162,7 @@ function addRowsCols() {
 
 function generatePNG() {
 	takeScreenShot();
-	hideButton();
+	hideTableGeneratorButton();
+	hideAddRowButton();
 }
 

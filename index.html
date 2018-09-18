@@ -2,46 +2,41 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Table Builder</title>
+<title>CPM Table Builder</title>
 <meta name="generator" content="Geany 1.27" />
 <link rel="stylesheet" href="styles.css">
 </head>
 
 <body onload="pageLoadFunctions()">
 
-	<h2>Table Builder</h2><br>
+	<div id="wrapper">
+		<h1>CPM Table Graphic Builder</h1><br>
 	
-	<div id="inputs">
-		<p>Please select the size of your new table</p>
+		<div id="inputs">
+			<p>Please select the size of your new table</p>
 		
-		<form>
+			<form>
+				<p>
+					Columns<br>
+					<input id="choose_cols" type="number" min="1" max="12" required>
+				</p>
+				<p>
+				(Don't include header rows for columns, these will be added automatically)<br>Rows:<br>
+					<input id="choose_rows" type="number" min="1" max="25" required>
+				</p>
+			</form>
 			<p>
-				Columns<br>
-				<input id="choose_cols" type="number" min="1" max="12" required>
+				<button type="button" onclick="addRowsCols()">Build starting empty table</button>
 			</p>
-			<p>
-			(Don't include header rows for columns, these will be added automatically)<br>Rows:<br>
-				<input id="choose_rows" type="number" min="1" max="25" required>
-			</p>
-		</form>
-		<p>
-			<button type="button" onclick="addRowsCols()">Build starting empty table</button>
-		</p>
-	</div>
+		</div>
 	
 	
-	<table id="my_table">
-	</table>
+		<table id="my_table">
+		</table>
 	
-	<p><button id="addRow" type="button" onclick="addOneRow()">Click to add one row</button></p>
-	<p><button id ="tableGeneratorButton" type="button" onclick="generatePNG()">Click to generate table graphic</button></p>
-	
-	
-<!-- Test element for resize event -->
-<div id="tester">
-</div>
-	
-	
+		<p><button id="addRow" type="button" onclick="addOneRow()">Click to add one row</button></p>
+		<p><button id ="tableGeneratorButton" type="button" onclick="generatePNG()">Click to generate table graphic</button></p>
+		
 <!-- Scripts -->	
 <script src="jquery-3.3.1.js"></script>
 <script src="html2canvas.js"></script>
@@ -60,7 +55,7 @@ window.takeScreenShot = function() {
 }
 </script>
 
-
+</div> <!-- close wrapper div -->
 
 </body>
 </html>
