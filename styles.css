@@ -74,7 +74,6 @@ tr:nth-child(n+2):nth-child(odd) {
 
 #my_table tr {
 	border-bottom: 0px solid black;
-
 }
 
 #my_table th, td {
@@ -88,24 +87,37 @@ tr:nth-child(n+2):nth-child(odd) {
 #my_table textarea {
 	background-color: transparent;
 	border: none; 
-	padding: 5px;
-	
 	font-family: Arial, Helvetica, sans-serif;
+	color: black;
+	padding-bottom: 0px;
+	padding-top: 5px;
+	padding-left: 10px;
 }
 
 #my_table .first textarea {
 	color: black;
 	font-weight: bold;
+	
 }
 
 #my_table tr:nth-child(n+2) td:nth-child(n+2) textarea {
-	text-align: center;
+	text-align: left;
+	
 }
-
 
 #my_table tr:nth-child(1) textarea {
 	height: 2.0em;
+	text-align: left;
 	font-weight: 600;
-	padding: 5px;
 }
 
+button {
+	padding: 10px 25px;
+	border: 2px solid #4295f4;
+	border-radius: 10px;
+	background-color: cornsilk;
+}
+
+#tableGeneratorButton {
+	font-weight: bold;
+}
