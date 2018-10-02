@@ -30,7 +30,19 @@ h1 {
 	text-align: center;
 	color: #213442;
 	margin-top: 15px;
-	margin-bottom: 50px;
+	margin-bottom: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	background-color: #69CEDA;
+	width: 90%;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+	
+hr {
+	display: block;
+	margin-bottom: 25px;
 }
 	
 p {
