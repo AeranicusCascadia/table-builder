@@ -8,38 +8,180 @@
 body {
 	background-color: #213442;
 	}
+
+p {
+	margin-bottom: 15px;
+}
 	
-canvas {
-	display: block;
-	background-color: #FFFFFF;
-	width: auto;
-	margin: 30px auto;
-}	
-	
-#wrapper {
+.grid-container {
 	width: 90%;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 10px;
 	height: auto;
 	margin: 15px auto;
 	padding: 15px;
 	background-color: #FFFFFF;
 	border: 5px solid #69CEDA;
 	border-style: groove;
+}
+
+.grid-item {
+	text-align: center;
 }	
+
+.grid-item#box-1 {
+	grid-row-start: 1;
+	grid-row-end: 2;
+	grid-column-start: 1;
+	grid-column-end: 4;
+	border: none;
+	height: 75px;
+}
+
+.grid-item#box-2 {
+	grid-row-start: 2;
+	grid-row-end: 3;
+	grid-column-start: 1;
+	grid-column-end: 2;
+	background-color: #ccffff;
+	border: 1px dotted black;
+	margin-top: 20px;
+	max-height: 60px;
+}
+
+#prompt {
+	font-size: large;
+	font-style: italic;
+	margin: 10px;
+}
+
+.grid-item#box-3 {
+	grid-row-start: 2;
+	grid-row-end: 3;
+	grid-column-start: 3;
+	grid-column-end: 4;
+	border: none;
+	margin-top: 20px;
+	width: 500px;
+}
+
+.collapsible {
+  background-color: #ffffff;
+  color: #213442;
+  font-style: oblique;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  border: 2px solid black;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.active, .collapsible:hover {
+  background-color: #ffffff;
+}
+
+.content {
+  padding: 18px;
+  display: none;
+  overflow: hidden;
+  text-align: left;
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.grid-item#box-4 {
+	grid-row-start: 4;
+	grid-row-end: 5;
+	grid-column-start: 1;
+	grid-column-end: 2;
+	border: 1px solid black;
+}
+
+.grid-item#box-5 {
+	grid-row-start: 5;
+	grid-row-end: 6;
+	grid-column-start: 1;
+	grid-column-end: 4;
+	border: 1px solid black;
+}
+
+.grid-item#box-6 {
+	grid-row-start: 6;
+	grid-row-end: 7;
+	grid-column-start: 1;
+	grid-column-end: 4;
+	border: 1px solid black;
+}
+
+.grid-item#box-7 {
+	grid-row-start: 7;
+	grid-row-end: 8;
+	grid-column-start: 1;
+	grid-column-end: 4;
+	border: 1px solid black;
+}
+
+h1 {
+	text-align: center;
+	color: #213442;
+	margin: 5px auto;
+	padding: 10px;
+	background-color: #69CEDA;
+	width: 90%;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+	
+hr {
+	display: block;
+}
+
+
+
+
+/*
+
+	
+canvas {
+	display: block;
+	background-color: #FFFFFF;
+	width: auto;
+	margin: 30px auto;
+}		
 	
 h1 {
 	text-align: center;
 	color: #213442;
 	margin-top: 15px;
-	margin-bottom: 50px;
+	margin-bottom: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	background-color: #69CEDA;
+	width: 90%;
+	border: 1px solid black;
+	border-radius: 10px;
 }
 	
-p {
-	margin: 10px 0px;
+hr {
+	display: block;
+	margin-bottom: 25px;
 }
+	
+
 	
 table {
 	border: 2px solid black;
 	}
+	
+
 
 tr:nth-child(n+2):nth-child(odd) {
 	background-color: #87CEFA;
@@ -53,16 +195,15 @@ tr:nth-child(n+2):nth-child(odd) {
 	margin: 25px auto 50px 25px;
 }
 
-#my_table .first{
+#my_table .first {
 	border-bottom:3px solid black;
 }
-#my_table .first td{
+#my_table .first td {
 	border-bottom:3px solid black;
 }
 
 #my_table tr {
 	border-bottom: 0px solid black;
-
 }
 
 #my_table th, td {
@@ -76,24 +217,39 @@ tr:nth-child(n+2):nth-child(odd) {
 #my_table textarea {
 	background-color: transparent;
 	border: none; 
-	padding: 5px;
-	
 	font-family: Arial, Helvetica, sans-serif;
+	color: black;
+	padding-bottom: 0px;
+	padding-top: 5px;
+	padding-left: 10px;
 }
 
 #my_table .first textarea {
 	color: black;
 	font-weight: bold;
+	
 }
 
 #my_table tr:nth-child(n+2) td:nth-child(n+2) textarea {
-	text-align: center;
+	text-align: left;
+	
 }
-
 
 #my_table tr:nth-child(1) textarea {
 	height: 2.0em;
+	text-align: left;
 	font-weight: 600;
-	padding: 5px;
 }
 
+button {
+	padding: 10px 25px;
+	border: 2px solid #4295f4;
+	border-radius: 10px;
+	background-color: cornsilk;
+}
+
+#tableGeneratorButton {
+	font-weight: bold;
+}
+
+*/

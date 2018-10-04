@@ -86,20 +86,21 @@ function tableFieldResize() {
 	});
 }
 
-/*
-// In Progress: target current column only to resize
-function columnFieldResize() {
-	// Use mouseup listener instead of resize event
-	$("td").mouseup(function(){
-		var elem_width = $(this).width();
-		// $("textarea").width(elem_width);
-		var x = 4;
-		window.alert(elem_width);
-		// selector is string so quoting and concat is required in arg
-		// $("td:nth-child("+ x +")").css("background-color", "red");
-	});
+// grid-item box-3 collapsible div
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
 }
-*/
 
 function buildInitialEmptyTable() {
 	
